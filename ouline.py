@@ -23,16 +23,18 @@ def getJobList(role,location):
             "Description": description
         }
         myArr[i] = jobDetailsjson
-        i = i + 1
+        i += 1
+
+    saveDataInJSON(myArr)
     return myArr
 
 
 
-
-
-#save data in JSON file
 def saveDataInJSON(jobDetails):
-    #Complete the missing part of this function here
+    jsonObject = json.dumps(jobDetails)
+    
+    with open("C:\\Users\\kyle\\PycharmProjects\\soup_of_beauty\\pythonBeautifulSoup--master\\hello-world3\\jobDetails.json", "w") as f:
+        f.write(jsonObject)
     print("Saving data to JSON")
 
 #main function
